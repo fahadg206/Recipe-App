@@ -1,0 +1,19 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.card-body {
+    text-align: center;
+}
+
+body {
+    background: linear-gradient(white, rgb(160, 233, 229));
+    height: 100vh;
+}
+
+.card {
+    width: 300px;
+    height: 300px;
+}
