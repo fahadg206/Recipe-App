@@ -15,9 +15,18 @@ async function randomRecipe() {
     foodImage.src = randomMeal.meals[0].strMealThumb;
     foodName.innerHTML = "Food: " + randomMeal.meals[0].strMeal;
     steps.innerHTML = "Steps: " + randomMeal.meals[0].strInstructions;
-    console.log(randomMeal.meals[0].strYoutube)
+    //console.log(randomMeal.meals[0].strYoutube)//
     youtubeVideo.href = randomMeal.meals[0].strYoutube;
-    ingredients.innerHTML = randomMeal.meals[0].strIngredient1 + ", " + randomMeal.meals[0].strIngredient2;
+    let ingredientString = '';
+    for (const [key, value] of Object.entries(randomMeal.meals[0])) {
+        String(key);
+        if(key.includes('strIngredient') && !(value === '') && !(value === null)) {
+            ingredientString += value + ', ' ;
+           // console.log(ingredientString)
+        }
+    }
+    ingredients.innerHTML = "Ingredients: " + ingredientString.slice(0, ingredientString.length -2);
+    console.log(ingredientString.charAt(ingredientString.length -2))
     // object for each different food that contains all the information required//
     let food = {
         foodImage: foodImage.src,
@@ -27,12 +36,12 @@ async function randomRecipe() {
         youtubeVideo: youtubeVideo.href,
     };
 
-    console.log(food)
+    //console.log(food)
     //Set to local storage//
     localStorage.setItem('food', JSON.stringify(food));
     
     let getFood = JSON.parse(localStorage.getItem('todo'))
-    console.log(getFood)
+    
 }
 
 //New Recipe Button //
@@ -41,4 +50,3 @@ newRecipe.addEventListener('click', () => {
     
 })
 
-//randomMeal.meals[0].//
