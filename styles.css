@@ -9,19 +9,81 @@
 }
 
 body {
-    background: linear-gradient(white, rgb(160, 233, 229));
+    background: rgb(235, 209, 209);
     height: 100vh;
 }
 
-.card {
-    width: 300px;
-    height: 300px;
+#food-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
 
+#food-item {
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.food-info {
+    text-align: center;
+    padding: 10px;
+    
+}
+
+#ingredients {
+    margin-top: 5px;
+    width: 60vw;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 10px;
+}
 #steps {
-    font-size: 9px;
+    width: 60vw;
+    margin: 5px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 10px;
 }
 
-#steps:hover {
-    visibility: visible;
+#video {
+    text-decoration: none;
+    border: 1px solid black;
+    background: linear-gradient(white, rgb(160, 233, 229) 99%);
+    border-radius: 15px;
+    padding: 5px;
+    
+}
+
+.food-info #video {
+    margin: 10px;
+}
+
+#new-recipe {
+    margin-top: 5px;
+    text-decoration: none;
+    border: 1px solid black;
+    background: linear-gradient(white, rgb(160, 233, 229) 99%);
+    border-radius: 15px;
+    padding: 5px;
+    color: rgb(86, 40, 100);
+    font-weight: bold;
+    font-size: 18px;
+    
+}
+
+#food-pic {
+    height: 500px;
+    width: 500px;
+}
+
+.test {
+    display: flex;
+    justify-content: center;
+}
+
+#demo {
+    font-size: 30px;
+    font-weight: bold;
 }
