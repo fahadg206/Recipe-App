@@ -23,7 +23,11 @@ async function randomRecipe() {
     // created ingredient variable and set equal to empty string. Will use later//
     let ingredientString = '';
     for (const [key, value] of Object.entries(randomMeal.meals[0])) {
+        /* turned key into string in attempt to search for "ingredient" key using 
+        the includes method.*/
         String(key);
+        /* there were some ingredients that had an empty string and null as
+        values so I used the does not equal operator to eliminate those chances*/
         if(key.includes('strIngredient') && !(value === '') && !(value === null)) {
             ingredientString += value + ', ' ;
            // console.log(ingredientString)
