@@ -7,8 +7,8 @@ const foodImage = document.getElementById('food-pic');
 const demo = document.getElementById('demo');
 
 //grab local storage//
-let getFood = JSON.parse(localStorage.getItem('todo'))
-console.log(getFood);
+let getFood = JSON.parse(localStorage.getItem('food'))
+console.log(getFood)
 
 async function randomRecipe() {
     const response = await fetch('https://www.themealdb.com/api/json/v1/1/random.php');
