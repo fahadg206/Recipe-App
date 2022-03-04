@@ -60,5 +60,6 @@ newRecipe.addEventListener('click', () => {
 function*/
 if(getFood) {
     randomRecipe();
+    
 }
 
