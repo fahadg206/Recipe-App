@@ -22,20 +22,21 @@ async function randomRecipe() {
     youtubeVideo.href = randomMeal.meals[0].strYoutube;
     // created ingredient variable and set equal to empty string. Will use later//
     let ingredientString = '';
-    for (const [key, value] of Object.entries(randomMeal.meals[0])) {
-        /* turned key into string in attempt to search for "ingredient" key using 
-        the includes method.*/
-        String(key);
-        /* there were some ingredients that had an empty string and null as
-        values so I used the does not equal operator to eliminate those chances*/
-        if(key.includes('strIngredient') && !(value === '') && !(value === null)) {
-            ingredientString += value + ', ' ;
-           // console.log(ingredientString)
+    //created variables that store new arrays for keys and values.
+    let keys = Object.keys(randomMeal.meals[0])
+    let values = Object.values(randomMeal.meals[0])
+    // since keys and values array have same length, therefor I could use same index 
+    //to access both arrays
+    for(let i=0; i < values.length; i++) {
+        if(keys[i].includes('strIngredient') && !(values[i] === '') && !(values[i] === null)) {
+            ingredientString += values[i] + ', ' ;
+            console.log(ingredientString)
         }
     }
     /* Added ingredients on top of eachother, otherwise it would replace itself
     with last ingredient. Also used the slice method to get rid of last comma.*/
     ingredients.innerHTML = "Ingredients: " + ingredientString.slice(0, ingredientString.length -2);
+    ingredients.style.textTransform = "capitalize";
     // object for each different food that contains all the information required//
     let food = {
         foodImage: foodImage.src,
@@ -63,3 +64,15 @@ if(getFood) {
     
 }
 
+
+// for (const [key, value] of Object.entries(randomMeal.meals[0])) {
+//     /* turned key into string in attempt to search for "ingredient" key using 
+//     the includes method.*/
+//     String(key);
+//     /* there were some ingredients that had an empty string and null as
+//     values so I used the does not equal operator to eliminate those chances*/
+//     if(key.includes('strIngredient') && !(value === '') && !(value === null)) {
+//         ingredientString += value + ', ' ;
+//        // console.log(ingredientString)
+//     }
+// }
